@@ -1,6 +1,6 @@
 # Google Software Product Sprint
 
-This repo contains the projects you'll work on throughout SPS.
+This repo contains Jesus's portfolio and SPS projects.
 
 To get started:
 
@@ -10,3 +10,5 @@ To get started:
   - If the tutorial panel does not open or display the walkthrough contents, try refreshing the page.
 
 Then follow the on-screen instructions to set up your repo.
+
+**This is the cloned repo that I created in Week 0 - Setup and that I will using for the 11 weeks.**
