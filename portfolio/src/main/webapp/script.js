@@ -17,7 +17,7 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Challenge ACCEPTED!', 'A lie is just a great story, that someone ruined with the truth', 'i thing i am in love with you...WHAT??!', 'Think of me as Yoda, only instead of being little and green, I wear suits and I am awesome. I am your bro. I am Broda'];
+      ['Challenge ACCEPTED!', 'A lie is just a great story, that someone ruined with the truth', 'i thing i am in love with you...WHAT???!', 'Think of me as Yoda, only instead of being little and green, I wear suits and I am awesome. I am your bro. I am Broda'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
