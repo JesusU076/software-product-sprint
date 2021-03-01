@@ -7,3 +7,13 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+body{
+    background-color: #383c85; 
+    text-align: center;
+    color: white;
+}
+.text{
+    font-family: Helvetica;
+    font-weight: lighter;
+}
