@@ -26,3 +26,10 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+async function callServlets() {
+  const responseFromServer = await fetch('/random');
+  const textFromResponse = await responseFromServer.text();
+  const dateContainer = document.getElementById('date-container');
+  dateContainer.innerText = textFromResponse;
+}

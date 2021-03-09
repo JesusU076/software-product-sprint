@@ -7,18 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns HTML that contains the page view count. */
-@WebServlet("/page-views")
-public class pageViews extends HttpServlet {
+@WebServlet("/random")
+public class randomGet extends HttpServlet {
 
-  private int pageViews = 0;
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    pageViews++;
-
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Page Views</h1>");
-    response.getWriter().println("<h2>Hello World! and Welcome to my counter of views</h2>");
-    response.getWriter().println("<p>This page has been viewed " + pageViews + " times.</p>");
+    response.getWriter().println("Your Random number is: ");
+    response.getWriter().println(Math.floor(Math.random() * 10));
   }
 }
