@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns HTML that contains the page view count. */
 @WebServlet("/random")
-public class randomGet extends HttpServlet {
+public class RandomNumberServlet extends HttpServlet {
 
 
   @Override
