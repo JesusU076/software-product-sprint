@@ -31,5 +31,5 @@ async function fetchRandomNumber() {
   const responseFromServer = await fetch('/random-number');
   const textFromResponse = await responseFromServer.text();
   const randomContainer = document.getElementById('random-number-container');
-  dateContainer.innerText = textFromResponse;
+  randomContainer.innerText = textFromResponse;
 }
