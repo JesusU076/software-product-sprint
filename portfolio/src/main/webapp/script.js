@@ -27,7 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-async function callServlets() {
+async function fetchRandomNumber() {
   const responseFromServer = await fetch('/random-number');
   const textFromResponse = await responseFromServer.text();
   const dateContainer = document.getElementById('random-number-container');
