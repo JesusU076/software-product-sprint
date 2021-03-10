@@ -30,6 +30,6 @@ function addRandomGreeting() {
 async function fetchRandomNumber() {
   const responseFromServer = await fetch('/random-number');
   const textFromResponse = await responseFromServer.text();
-  const dateContainer = document.getElementById('random-number-container');
+  const randomContainer = document.getElementById('random-number-container');
   dateContainer.innerText = textFromResponse;
 }
