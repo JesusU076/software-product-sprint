@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/page-views")
+@WebServlet("/random-phrase")
 public class RandomPhraseServlets extends HttpServlet {
 
     String[] funFacts = {
@@ -20,31 +20,20 @@ public class RandomPhraseServlets extends HttpServlet {
 
   @Override
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
-
-        final String json = convertToJson(funFacts);
-
+        String json = convertToJson(funFacts);
         response.setContentType("application/json;");
         response.getWriter().println(json);
     }
 
   private String convertToJson(final String[] funFacts) {
-    String json = "{";
+    String json = "[";
+
     for(int i = 0; i < (funFacts.length - 1); i++)
     {
-        json += "\"funFact" + String.valueOf(i + 1) + "\": ";
-        json += "\"" + funFacts[i] + "\"";
-        json += ", ";
+        json += "\"" + funFacts[i] + "\"" + ", ";
     }
-    json += "\"funFact" + String.valueOf(funFacts.length) + "\": ";
-    json += "\"" + funFacts[funFacts.length - 1] + "\"";
-    json += "}";
+    json += "\"" + funFacts[funFacts.length - 1] + "\"" + "]";
 
     return json;
   }
-
-  /*private String convertToJsonUsingGson(String[] funFacts) {
-    Gson gson = new Gson();
-    String json = gson.toJson(funFacts);
-    return json;
-  }*/
 }

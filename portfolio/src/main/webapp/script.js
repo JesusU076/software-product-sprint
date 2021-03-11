@@ -30,6 +30,13 @@ function addRandomGreeting() {
 async function fetchRandomNumber() {
   const responseFromServer = await fetch('/random-number');
   const textFromResponse = await responseFromServer.text();
-  const randomContainer = document.getElementById('random-number-container');
-  randomContainer.innerText = textFromResponse;
+  const numberContainer = document.getElementById('random-number-container');
+  numberContainer.innerText = textFromResponse;
+}
+
+async function fetchRandomPhrase() {
+  const responseFromServer = await fetch('/random-phrase');
+  const jsonData = await responseFromServer.json();
+  const phraseContainer = document.getElementById('random-phrase-container');
+phraseContainer.innerText = jsonData[Math.floor(Math.random() * 5)]
 }
