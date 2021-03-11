@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns HTML that contains the page view count. */
-@WebServlet("/random")
-public class randomGet extends HttpServlet {
+/** Servlet that returns a random number from 0 to 9 */
+@WebServlet("/random-number")
+public class RandomNumberServlet extends HttpServlet {
 
 
   @Override
