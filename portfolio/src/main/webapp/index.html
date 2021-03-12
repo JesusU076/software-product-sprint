@@ -35,13 +35,23 @@
     </div>
 
     <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-    <p>Click here to get a random message:</p>
-    <button onclick="addRandomGreeting()">Hello</button>
-    <div id="random-number-container"></div>
-    <button onclick="fetchRandomNumber();">
-      Random Number from 0 to 9
+    <p>Click on the buttons to see random things:</p>
+    
+    <p id="greeting-container"></p>
+    <button onclick="addRandomGreeting()">
+        Random Phrases (Week 0)
     </button>
-    <p id="date-container"></p>
+    
+    <p id="random-number-container"></p>
+    <button onclick="fetchRandomNumber();">
+      Random Number from 0 to 9 (Week 1)
+    </button>
+
+    <p id="random-phrase-container"></p>
+    <button onclick="fetchRandomPhrase()">
+        Get a Fun Fact! (Week 2)
+    </button>
+    <p>Click <a href="/random-phrase">here</a> to see the server response directly.</p>
     </div>
   </body>
 </html>
