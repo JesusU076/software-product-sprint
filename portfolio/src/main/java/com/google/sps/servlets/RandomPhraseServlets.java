@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/random-phrase")
 public class RandomPhraseServlets extends HttpServlet {
 
-    String[] funFacts = {
+    public static final String[] funFacts = {
         "Goosebumps are meant to ward off predators",
         "The moon has moonquakes",
         "The heads on Easter Island have bodies",
