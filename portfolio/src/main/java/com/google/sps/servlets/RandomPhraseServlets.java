@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RandomPhraseServlets extends HttpServlet {
 
     String[] FUNFACTS = {
+
         "Goosebumps are meant to ward off predators",
         "The moon has moonquakes",
         "The heads on Easter Island have bodies",
