@@ -19,10 +19,10 @@ public class ListImagesMemes extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
    response.setContentType("text/html;");
     // List all of the uploaded files.
-    String projectId = "jurquidezcalvo-sps-spring21";
-    String bucketName = "jurquidezcalvo-sps-spring21.appspot.com";
-    Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Bucket bucket = storage.get(bucketName);
+    public static final String PROJECT_ID = "jurquidezcalvo-sps-spring21";
+    public static final String BUCKET_NAME = "jurquidezcalvo-sps-spring21.appspot.com";
+    Storage storage = StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
+    Bucket bucket = storage.get(BUCKET_NAME);
     Page<Blob> blobs = bucket.list();
 
     // Output <img> elements as HTML.
