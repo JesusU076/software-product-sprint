@@ -38,7 +38,7 @@ async function fetchRandomPhrase() {
   const responseFromServer = await fetch('/random-phrase');
   const jsonData = await responseFromServer.json();
   const phraseContainer = document.getElementById('random-phrase-container');
-
+  
   phraseContainer.innerText = jsonData[Math.floor(Math.random() * jsonData.length)]
 }
 
