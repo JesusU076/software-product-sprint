@@ -43,7 +43,7 @@ async function fetchRandomPhrase() {
 }
 
 async function fetchMemeFile() {
-  const responseFromServer = await fetch('/listOfMemes');
+  const responseFromServer = await fetch('/memes');
   const textFromResponse = await responseFromServer.text();
   const memeContainer = document.getElementById('memes-container');
   memeContainer.innerHTML = textFromResponse;
