@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Shows all of the images uploaded to Cloud Storage. */
-@WebServlet("/listOfMemes")
+@WebServlet("/memes")
 public class ListImagesMemes extends HttpServlet {
 
   @Override
