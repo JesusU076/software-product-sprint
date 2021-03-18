@@ -1,8 +1,11 @@
 package com.google.sps.servlets;
 
+import com.google.api.gax.paging.Page;
+
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import java.io.IOException;
@@ -17,9 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.util.*;
 
-@WebServlet("/uploadMemes")
+@WebServlet("/memes")
 @MultipartConfig
-public class UploadFileForm extends HttpServlet {
+public class MemesUpload extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -43,7 +46,8 @@ public class UploadFileForm extends HttpServlet {
   }
 
   /** Uploads a file to Cloud Storage and returns the uploaded file's URL. */
-  private static String uploadToCloudStorage(String fileName, InputStream fileInputStream) {
+  private static 
+  String uploadToCloudStorage(String fileName, InputStream fileInputStream) {
     String projectId = "jurquidezcalvo-sps-spring21";
     String bucketName = "jurquidezcalvo-sps-spring21.appspot.com";
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
@@ -56,4 +60,21 @@ public class UploadFileForm extends HttpServlet {
     // Return the uploaded file's URL.
     return blob.getMediaLink();
   }
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+   response.setContentType("text/html;");
+    // List all of the uploaded files.
+    final String PROJECT_ID = "jurquidezcalvo-sps-spring21";
+    final String BUCKET_NAME = "jurquidezcalvo-sps-spring21.appspot.com";
+    Storage storage = StorageOptions.newBuilder().setProjectId(PROJECT_ID).build().getService();
+    Bucket bucket = storage.get(BUCKET_NAME);
+    Page<Blob> blobs = bucket.list();
+
+    // Output <img> elements as HTML.
+    for (Blob blob : blobs.iterateAll()) {
+      String imgTag = String.format("<img src=\"%s\" width = \"300\"/>", blob.getMediaLink());
+      response.getWriter().println(imgTag);
+    }
+  }
 }
+
