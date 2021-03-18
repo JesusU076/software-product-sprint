@@ -12,11 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Shows all of the images uploaded to Cloud Storage. */
-@WebServlet("/list-images")
-public class ListImagesServlet extends HttpServlet {
+@WebServlet("/listOfMemes")
+public class ListImagesMemes extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+   response.setContentType("text/html;");
     // List all of the uploaded files.
     String projectId = "jurquidezcalvo-sps-spring21";
     String bucketName = "jurquidezcalvo-sps-spring21.appspot.com";
@@ -25,11 +26,9 @@ public class ListImagesServlet extends HttpServlet {
     Page<Blob> blobs = bucket.list();
 
     // Output <img> elements as HTML.
-    response.setContentType("text/html;");
     for (Blob blob : blobs.iterateAll()) {
-      String imgTag = String.format("<img src=\"%s\" />", blob.getMediaLink());
+      String imgTag = String.format("<img src=\"%s\" width = \"300\"/>", blob.getMediaLink());
       response.getWriter().println(imgTag);
-      response.getWriter().println("<br>");
     }
   }
 }
