@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/random-phrase")
 public class RandomPhraseServlets extends HttpServlet {
 
-    public static final String[] funFacts = {
+    final String[] FUN_FACTS = {
+
         "Goosebumps are meant to ward off predators",
         "The moon has moonquakes",
         "The heads on Easter Island have bodies",
@@ -20,7 +21,7 @@ public class RandomPhraseServlets extends HttpServlet {
 
   @Override
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
-        String json = convertToJson(funFacts);
+        String json = convertToJson(FUN_FACTS);
         response.setContentType("application/json;");
         response.getWriter().println(json);
     }

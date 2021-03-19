@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload='fetchMemeFile()'>
     <div id="content">
         <h1>Jesús Urquídez Calvo</h1>
         <p>I'm a mexican of 19 years old that love Computer Science and Videogames...and a little bit weirdo</p>
@@ -51,7 +51,19 @@
     <button onclick="fetchRandomPhrase()">
         Get a Fun Fact! (Week 2)
     </button>
-    <p>Click <a href="/random-phrase">here</a> to see the server response directly.</p>
+
+    <h1> Collage of Memes </h1>
+    <p> Lets create a collage of memes from people around the world</p>
+
+    <form action="/memes" method="POST" enctype="multipart/form-data">
+      <p>Your Meme or Funny Image:</p>
+      <input type="file" name="image">
+      <button>Submit</button>
+    </form>
+
+    <br>
+    <h1> Meme Recolector </h1>
+    <div id="memes-container"></div>    
     </div>
   </body>
 </html>

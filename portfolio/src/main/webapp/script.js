@@ -19,7 +19,7 @@ function addRandomGreeting() {
   const greetings =
       ['Challenge ACCEPTED!', 'A lie is just a great story, that someone ruined with the truth', 'i think i am in love with you...WHAT???!', 'Think of me as Yoda, only instead of being little and green, I wear suits and I am awesome. I am your bro. I am Broda'];
 
-  // Pick a random greeting.
+  // Pick a random greeting. 
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
   // Add it to the page.
@@ -38,5 +38,13 @@ async function fetchRandomPhrase() {
   const responseFromServer = await fetch('/random-phrase');
   const jsonData = await responseFromServer.json();
   const phraseContainer = document.getElementById('random-phrase-container');
-phraseContainer.innerText = jsonData[Math.floor(Math.random() * jsonData.length)]
+  
+  phraseContainer.innerText = jsonData[Math.floor(Math.random() * jsonData.length)]
+}
+
+async function fetchMemeFile() {
+  const responseFromServer = await fetch('/memes');
+  const textFromResponse = await responseFromServer.text();
+  const memeContainer = document.getElementById('memes-container');
+  memeContainer.innerHTML = textFromResponse;
 }
